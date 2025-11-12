@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Option Switcher with Benchmarks</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="page">
+      <!-- LEFT: attribute toggles -->
+      <main class="left">
+        <h1 class="section-title">Attribute Toggles</h1>
+        <div id="attributes"></div>
+      </main>
+
+      <!-- RIGHT: benchmarks -->
+      <aside class="right">
+        <h2 class="section-title">Benchmarks</h2>
+        <p class="muted">
+          Accuracies per race, with overall Equalized Odds and Predicted Parity
+          below.
+        </p>
+
+        <div id="benchmarks">
+          <!-- accuracy-by-race table goes here -->
+        </div>
+
+        <div id="overall-metrics" class="overall-wrap">
+          <!-- overall EO / PP table goes here -->
+        </div>
+      </aside>
+    </div>
+  </body>
+</html>
