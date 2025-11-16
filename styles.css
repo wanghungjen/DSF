@@ -125,6 +125,11 @@ body {
   margin-top: 16px; /* adjust to taste */
 }
 
+.table td:not(:first-child),
+.table th:not(:first-child) {
+  text-align: right;
+}
+
 /* Responsive */
 @media (max-width: 960px) {
   .page {

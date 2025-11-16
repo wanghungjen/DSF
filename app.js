@@ -125,13 +125,15 @@ function updateBenchmarks() {
 
   // Header
   table.innerHTML = `
-    <thead>
-      <tr>
-        <th>Race</th>
-        <th>Accuracy</th>
-      </tr>
-    </thead>
-  `;
+  <thead>
+    <tr>
+      <th>Race</th>
+      <th>Accuracy</th>
+      <th>Fraction Given Loan</th>
+      <th>Fraction Given Loan (Original)</th>
+    </tr>
+  </thead>
+`;
   const tbody = document.createElement("tbody");
   table.appendChild(tbody);
 
@@ -146,9 +148,11 @@ function updateBenchmarks() {
   RACE_VARS.forEach((race) => {
     const tr = document.createElement("tr");
     tr.innerHTML = `
-      <td>${race}</td>
-      <td>${fmt(row[race])}</td>
-    `;
+    <td>${race}</td>
+    <td>${fmt(row[race])}</td>
+    <td>${fmt(row[`${race}_fraction_given`])}</td>
+    <td>${fmt(row[`${race}_fraction_given_original`])}</td>
+  `;
     tbody.appendChild(tr);
   });
 
