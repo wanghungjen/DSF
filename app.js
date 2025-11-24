@@ -185,7 +185,7 @@ function updateBenchmarks() {
 // ==========================
 document.addEventListener("DOMContentLoaded", () => {
   // load mock.csv automatically
-  fetch("./mock.csv")
+  fetch("./data.csv")
     .then((resp) => resp.text())
     .then((text) => {
       DB_ROWS = parseCSV(text);
@@ -193,6 +193,6 @@ document.addEventListener("DOMContentLoaded", () => {
       updateBenchmarks();
     })
     .catch((err) => {
-      console.error("Failed to load mock.csv:", err);
+      console.error("Failed to load data.csv:", err);
     });
 });
