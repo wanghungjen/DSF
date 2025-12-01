@@ -24,7 +24,6 @@ const OPTIONS = [
 const RACE_VARS = [
   "White alone",
   "Black or African American alone",
-  // "American Indian and Alaska Native alone",
   "Asian alone",
   "Native Hawaiian and Other Pacific Islander alone",
   "Some other race alone",
