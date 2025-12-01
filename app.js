@@ -5,7 +5,7 @@ const selected_cols = ["race_geo", "annual_inc", "int_rate", "dti", "zip_code"];
 
 // Human-readable labels for left-side attributes
 const ATTRIBUTE_LABELS = {
-  race_geo: "Racial Group",
+  race_geo: "Race",
   annual_inc: "Annual Income",
   int_rate: "Interest Rate",
   dti: "Debt-to-Income Ratio",
@@ -175,7 +175,11 @@ function updateBenchmarks() {
   summary.innerHTML = `
     <table class="table">
       <tbody>
-        <tr>
+      <tr>
+          <td><strong>Accuracy (overall)</strong></td>
+          <td>${fmt(row.overall_accuracy)}</td>
+        </tr>  
+      <tr>
           <td><strong>Equalized Odds (overall)</strong></td>
           <td>${fmt(row.equalized_odds)}</td>
         </tr>
