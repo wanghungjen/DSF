@@ -3,6 +3,15 @@
 // ==========================
 const selected_cols = ["race_geo", "annual_inc", "int_rate", "dti", "zip_code"];
 
+// Human-readable labels for left-side attributes
+const ATTRIBUTE_LABELS = {
+  race_geo: "Racial Group",
+  annual_inc: "Annual Income",
+  int_rate: "Interest Rate",
+  dti: "Debt-to-Income Ratio",
+  zip_code: "ZIP Code",
+};
+
 // Toggle options → numeric codes for DB lookup
 const OPTIONS = [
   { label: "Decrease", value: "decrease", code: 1 },
@@ -15,7 +24,7 @@ const OPTIONS = [
 const RACE_VARS = [
   "White alone",
   "Black or African American alone",
-  "American Indian and Alaska Native alone",
+  // "American Indian and Alaska Native alone",
   "Asian alone",
   "Native Hawaiian and Other Pacific Islander alone",
   "Some other race alone",
@@ -61,7 +70,8 @@ function renderAttributeToggles(container) {
 
     const label = document.createElement("div");
     label.className = "attribute-label";
-    label.textContent = attr;
+    // Use human-readable label if available, otherwise fall back to the key
+    label.textContent = ATTRIBUTE_LABELS[attr] || attr;
 
     const switcher = document.createElement("div");
     switcher.className = "option-switcher";
@@ -138,7 +148,7 @@ function updateBenchmarks() {
   table.appendChild(tbody);
 
   if (!row) {
-    tbody.innerHTML = `<tr><td colspan="2">No data for this combination.</td></tr>`;
+    tbody.innerHTML = `<tr><td colspan="4">No data for this combination.</td></tr>`;
     wrap.appendChild(table);
     container.appendChild(wrap);
     return;
